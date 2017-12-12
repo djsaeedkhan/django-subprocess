@@ -1,1 +1,26 @@
-saeed
+<table cellspacing="0" border="0" cellpadding="0">
+    <tr style="background:#CCC">
+        <td>Access</td>
+        <td>Hard Link</td>
+        <td>size</td>
+        <td>Month</td>
+        <td>Day</td>
+        <td>Time</td>
+        <td>File Name</td>
+    </tr>
+    {% for key,value in list.items %}
+    <tr>
+        {% for j in value %}
+            {% if j|length|get_digit:"-1" > 0 %}
+                <td>{{j}}</td>
+            {% endif %}
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+<style>
+table{font:15px tahoma}
+table tr:nth-child(even){background:#00bcd463;}
+table tr td{padding:5px 8px;text-align:center;border:1px solid #CCC}
+</style>
+
